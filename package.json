@@ -1,0 +1,30 @@
+{
+	"name": "type-fast",
+	"version": "0.1.0",
+	"description": " ⌨💨 Minimal and clean WPM measurement ",
+	"private": true,
+	"dependencies": {
+		"react": "^16.4.2",
+		"react-dom": "^16.4.2",
+		"react-scripts": "1.1.4"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test --env=jsdom",
+		"eject": "react-scripts eject"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/u1f944/berenson.me.git"
+	},
+	"author": {
+		"name": "Spencer Berenson",
+		"email": "spencer@berenson.me",
+		"url": "https://berenson.me"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/u1f944/berenson.me/issues"
+	}
+}
