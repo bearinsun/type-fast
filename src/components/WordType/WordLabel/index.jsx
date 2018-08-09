@@ -41,13 +41,17 @@ export default class WordLabel extends Component {
 	render() {
 		return (
 			<label className="word-type__label" htmlFor={this.props.htmlFor}>
-				{this.computePartials().map(partial => {
+				{this.computePartials().map((partial, index) => {
 					if (!partial.isTyped) return partial.letters;
 
 					let className = "word-type__letters word-type__letters--";
 					className += partial.isCorrect ? "correct" : "incorrect";
 
-					return <mark className={className}>{partial.letters}</mark>;
+					return (
+						<mark className={className} key={index}>
+							{partial.letters}
+						</mark>
+					);
 				})}
 			</label>
 		);
