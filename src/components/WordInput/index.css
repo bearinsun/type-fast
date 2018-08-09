@@ -31,11 +31,17 @@
 }
 
 .word-input__input {
-	border: none;
 	width: 35vw;
+	border: none;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.02);
 	padding: 1.25em 1.25em;
 	background-color: #fafafa;
 
 	font-size: 3vmin;
 	color: #333;
+}
+
+.word-input__input:hover,
+.word-input__input:focus {
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
 }
