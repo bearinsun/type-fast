@@ -1,9 +1,10 @@
 {
 	"name": "type-fast",
 	"version": "0.1.0",
-	"description": " ⌨💨 Minimal and clean WPM measurement ",
+	"description": " ⌨💨 Simple, minimal typing practice",
 	"private": true,
 	"dependencies": {
+		"normalize.css": "^8.0.0",
 		"react": "^16.4.2",
 		"react-dom": "^16.4.2",
 		"react-scripts": "1.1.4"
