@@ -33,7 +33,7 @@ export default class WordType extends Component {
 
 	render() {
 		return (
-			<fieldset className="word-input">
+			<fieldset className="word-type">
 				<WordLabel
 					htmlFor={this.props.id}
 					word={this.state.word}

@@ -1,15 +1,15 @@
-.word-input {
+.word-type {
 	border: 0;
 	margin: 0;
 	padding: 0;
 }
 
-.word-input__label,
-.word-input__input {
+.word-type__label,
+.word-type__input {
 	display: block;
 }
 
-.word-input__label {
+.word-type__label {
 	margin-bottom: 1em;
 
 	text-align: center;
@@ -18,19 +18,19 @@
 	color: #222;
 }
 
-.word-input__character {
+.word-type__character {
 	background-color: transparent;
 }
 
-.word-input__character--wrong {
+.word-type__letters--incorrect {
 	background-color: rgba(231, 76, 60, 0.5);
 }
 
-.word-input__character--right {
+.word-type__letters--correct {
 	background-color: rgba(46, 204, 113, 0.5);
 }
 
-.word-input__input {
+.word-type__input {
 	width: 90vw;
 	margin: 0 auto;
 	border: none;
@@ -42,17 +42,17 @@
 	color: #333;
 }
 
-.word-input__input:hover,
-.word-input__input:focus {
+.word-type__input:hover,
+.word-type__input:focus {
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
 }
 
 @media (min-width: 769px) {
-	.word-input__label {
+	.word-type__label {
 		font-size: 3em;
 	}
 
-	.word-input__input {
+	.word-type__input {
 		width: 35vw;
 	}
 }

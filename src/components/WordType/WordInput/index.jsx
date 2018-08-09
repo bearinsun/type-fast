@@ -5,7 +5,7 @@ export default class WordInput extends Component {
 		return (
 			<input
 				id={this.props.id}
-				className="word-input__input"
+				className="word-type__input"
 				value={this.props.typedWord}
 				onChange={event => {
 					const value = event.target.value;
