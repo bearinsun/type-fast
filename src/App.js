@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import "normalize.css/normalize.css";
 import "./App.css";
 
-import WordInput from "./components/WordInput";
+import WordType from "./components/WordType";
 
 class App extends Component {
 	render() {
-		return <WordInput id="control" />;
+		return <WordType id="control" />;
 	}
 }
 
