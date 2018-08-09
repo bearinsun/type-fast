@@ -16,6 +16,7 @@ export default class WordInput extends Component {
 
 					this.props.completeWord();
 				}}
+				autoFocus
 			/>
 		);
 	}
