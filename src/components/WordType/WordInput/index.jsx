@@ -9,7 +9,7 @@ export default function WordInput(props) {
 			onPaste={event => event.preventDefault()}
 			onChange={event => {
 				const value = event.target.value;
-				if (value !== props.word) {
+				if (value !== props.goalWord) {
 					props.updateTypedWord(value);
 					return;
 				}
