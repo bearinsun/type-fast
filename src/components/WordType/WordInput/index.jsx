@@ -6,6 +6,7 @@ export default function WordInput(props) {
 			id={props.id}
 			className="word-type__input"
 			value={props.typedWord}
+			onPaste={event => event.preventDefault()}
 			onChange={event => {
 				const value = event.target.value;
 				if (value !== props.word) {
