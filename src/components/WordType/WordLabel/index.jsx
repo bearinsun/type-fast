@@ -7,21 +7,15 @@ export default class WordLabel extends Component {
 				{this.props.word.split("").map((letter, index) => {
 					if (!this.props.typedWord[index]) return letter;
 
+					let className = "word-input__character ";
 					if (
 						this.props.word[0] === this.props.typedWord[0] &&
 						letter === this.props.typedWord[index]
 					)
-						return (
-							<mark className="word-input__character word-input__character--right">
-								{letter}
-							</mark>
-						);
+						className += "word-input__character--right";
+					else className += "word-input__character--wrong";
 
-					return (
-						<span className="word-input__character word-input__character--wrong">
-							{letter}
-						</span>
-					);
+					return <mark className={className}>{letter}</mark>;
 				})}
 			</label>
 		);
