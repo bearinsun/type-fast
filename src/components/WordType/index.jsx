@@ -15,7 +15,7 @@ export default class WordType extends Component {
 		};
 
 		this.updateTypedWord = this.updateTypedWord.bind(this);
-		this.completeWord = this.completeWord.bind(this);
+		this.changeWord = this.changeWord.bind(this);
 	}
 
 	updateTypedWord(value) {
@@ -24,7 +24,7 @@ export default class WordType extends Component {
 		});
 	}
 
-	completeWord() {
+	changeWord() {
 		this.setState({
 			word: words[Math.floor(Math.random() * words.length)],
 			typedWord: ""
@@ -45,7 +45,7 @@ export default class WordType extends Component {
 					word={this.state.word}
 					typedWord={this.state.typedWord}
 					updateTypedWord={this.updateTypedWord}
-					completeWord={this.completeWord}
+					changeWord={this.changeWord}
 				/>
 			</fieldset>
 		);
