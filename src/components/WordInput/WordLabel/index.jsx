@@ -3,10 +3,7 @@ import React, { Component } from "react";
 export default class WordLabel extends Component {
 	render() {
 		return (
-			<label
-				className="speed-measure__label"
-				htmlFor={this.props.htmlFor}
-			>
+			<label className="word-input__label" htmlFor={this.props.htmlFor}>
 				{this.props.word.split("").map((letter, index) => {
 					if (!this.props.typedWord[index]) return letter;
 
@@ -15,13 +12,13 @@ export default class WordLabel extends Component {
 						letter === this.props.typedWord[index]
 					)
 						return (
-							<mark className="speed-measure__character speed-measure__character--right">
+							<mark className="word-input__character word-input__character--right">
 								{letter}
 							</mark>
 						);
 
 					return (
-						<span className="speed-measure__character speed-measure__character--wrong">
+						<span className="word-input__character word-input__character--wrong">
 							{letter}
 						</span>
 					);
