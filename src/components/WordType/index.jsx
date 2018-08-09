@@ -13,10 +13,7 @@ export default class WordType extends Component {
 			goalWord: words[Math.floor(Math.random() * words.length)],
 			typedWord: ""
 		};
-		this.state.letterGroups = this.compareGoalToTyped(
-			this.state.goalWord,
-			this.state.typedWord
-		);
+		this.state.letterGroups = this.compareGoalToTyped();
 
 		this.updateTypedWord = this.updateTypedWord.bind(this);
 		this.changeWord = this.changeWord.bind(this);
@@ -30,10 +27,7 @@ export default class WordType extends Component {
 			},
 			() =>
 				this.setState({
-					letterGroups: this.compareGoalToTyped(
-						this.state.goalWord,
-						this.state.typedWord
-					)
+					letterGroups: this.compareGoalToTyped()
 				})
 		);
 	}
