@@ -1,6 +1,7 @@
 .word-type__input {
 	transition: 0.15s all ease;
 
+	display: block;
 	width: 90vw;
 	margin: 0 auto;
 	border: none;
