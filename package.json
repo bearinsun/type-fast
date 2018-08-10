@@ -27,5 +27,8 @@
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/u1f944/berenson.me/issues"
+	},
+	"devDependencies": {
+		"classnames": "^2.2.6"
 	}
 }
