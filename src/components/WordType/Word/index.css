@@ -1,0 +1,27 @@
+.word-type__word {
+	display: block;
+	margin-bottom: 1em;
+
+	text-align: center;
+	font-size: 2.5em;
+	font-weight: 700;
+	color: #222;
+}
+
+.word-type__character {
+	background-color: transparent;
+}
+
+.word-type__letters--incorrect {
+	background-color: rgba(231, 76, 60, 0.5);
+}
+
+.word-type__letters--correct {
+	background-color: rgba(46, 204, 113, 0.5);
+}
+
+@media (min-width: 769px) {
+	.word-type__word {
+		font-size: 3em;
+	}
+}
