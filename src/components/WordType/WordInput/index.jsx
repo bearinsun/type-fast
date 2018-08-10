@@ -14,7 +14,7 @@ export default function WordInput(props) {
 					return;
 				}
 
-				props.changeWord();
+				props.changeGoalWord();
 			}}
 			autoFocus
 		/>
