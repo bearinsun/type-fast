@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "normalize.css/normalize.css";
 import "./App.css";
 import json from "./data/words.json";
 
