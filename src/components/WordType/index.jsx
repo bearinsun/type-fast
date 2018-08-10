@@ -78,7 +78,7 @@ export default class WordType extends Component {
 			{
 				spacesAfterWords: event.target.checked
 			},
-			() => this.setState({ goalWord: (this.state.goalWord += " ") })
+			() => this.setState({ goalWord: this.state.goalWord.concat(" ") })
 		);
 	};
 
