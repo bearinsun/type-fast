@@ -1,15 +1,9 @@
-.word-type {
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
-
-.word-type__label,
+.word-type__word,
 .word-type__input {
 	display: block;
 }
 
-.word-type__label {
+.word-type__word {
 	margin-bottom: 1em;
 
 	text-align: center;
@@ -51,7 +45,7 @@
 }
 
 @media (min-width: 769px) {
-	.word-type__label {
+	.word-type__word {
 		font-size: 3em;
 	}
 
