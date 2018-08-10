@@ -35,7 +35,7 @@ export default class WordType extends Component {
 	updateTypedWord = value => {
 		this.setState({
 			typedWord: value,
-			letterGroups: this.compareGoalToTyped(value)
+			letterGroups: this.compareGoalToTyped(this.state.goalWord, value)
 		});
 	};
 
@@ -46,16 +46,15 @@ export default class WordType extends Component {
 		});
 	};
 
-	compareGoalToTyped = typedWord => {
-		typedWord = typedWord || this.state.typedWord;
-		const typedLetters = typedWord
-			.slice(0, this.state.goalWord.length)
-			.split("");
+	compareGoalToTyped = (goal, typed) => {
+		goal = goal || this.state.goalWord;
+		typed = typed || this.state.typedWord;
+		const typedLetters = typed.slice(0, goal.length).split("");
 
 		return typedLetters.reduce((previousLetterGroups, letter, index) => {
 			let lastLetterGroup =
 				previousLetterGroups[previousLetterGroups.length - 1];
-			const isMatching = letter === this.state.goalWord[index];
+			const isMatching = letter === goal[index];
 
 			if (!lastLetterGroup || lastLetterGroup.isMatching !== isMatching) {
 				lastLetterGroup = {
@@ -64,7 +63,7 @@ export default class WordType extends Component {
 				previousLetterGroups.push(lastLetterGroup);
 			}
 
-			lastLetterGroup.letters += this.state.goalWord[index];
+			lastLetterGroup.letters += goal[index];
 			lastLetterGroup.isMatching = isMatching;
 
 			return previousLetterGroups;
@@ -86,12 +85,16 @@ export default class WordType extends Component {
 	toggleCapitalizeWords = event => {
 		this.wordInput.current.focus();
 
-		const checked = event.target.checked;
+		const checked = event.target.checked,
+			newGoal = checked
+				? this.state.goalWord
+				: this.state.goalWord.toLowerCase();
 		this.setState({
 			capitalizeWords: checked,
-			goalWord: checked
-				? this.state.goalWord
-				: this.state.goalWord.toLowerCase()
+			goalWord: newGoal,
+			letterGroups: checked
+				? this.state.letterGroups
+				: this.compareGoalToTyped(newGoal, this.state.typedWord)
 		});
 	};
 
