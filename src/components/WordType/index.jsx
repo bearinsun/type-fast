@@ -2,15 +2,14 @@ import React, { Component } from "react";
 import "./index.css";
 import WordLabel from "./WordLabel";
 import WordInput from "./WordInput";
-import wordsJson from "../../data/words";
-
-const words = wordsJson.words;
 
 export default class WordType extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			goalWord: words[Math.floor(Math.random() * words.length)],
+			goalWord: this.props.words[
+				Math.floor(Math.random() * this.props.words.length)
+			],
 			typedWord: ""
 		};
 		this.state.letterGroups = this.compareGoalToTyped();
@@ -34,7 +33,9 @@ export default class WordType extends Component {
 
 	changeWord() {
 		this.setState({
-			goalWord: words[Math.floor(Math.random() * words.length)],
+			goalWord: this.props.words[
+				Math.floor(Math.random() * this.props.words.length)
+			],
 			typedWord: ""
 		});
 	}
