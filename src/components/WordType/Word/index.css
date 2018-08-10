@@ -2,6 +2,7 @@
 	display: block;
 	margin-bottom: 1em;
 
+	cursor: help;
 	user-select: none;
 
 	text-align: center;

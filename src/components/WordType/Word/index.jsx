@@ -4,7 +4,11 @@ import "./index.css";
 
 export default function Word(props) {
 	return (
-		<label className="word-type__word" htmlFor={props.htmlFor}>
+		<label
+			className="word-type__word"
+			htmlFor={props.htmlFor}
+			title="Type this word!"
+		>
 			{props.typedWord
 				? [
 						props.letterGroups.map((letterGroup, index) => {
