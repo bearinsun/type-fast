@@ -15,7 +15,6 @@ export default class WordType extends Component {
 		};
 
 		this.state.goalWord = this.determineGoalWord();
-		this.state.letterGroups = this.compareGoalToTyped();
 
 		this.wordInput = React.createRef();
 	}
@@ -34,8 +33,7 @@ export default class WordType extends Component {
 
 	updateTypedWord = value => {
 		this.setState({
-			typedWord: value,
-			letterGroups: this.compareGoalToTyped(this.state.goalWord, value)
+			typedWord: value
 		});
 	};
 
@@ -44,30 +42,6 @@ export default class WordType extends Component {
 			goalWord: this.determineGoalWord(),
 			typedWord: ""
 		});
-	};
-
-	compareGoalToTyped = (goal, typed) => {
-		goal = goal || this.state.goalWord;
-		typed = typed || this.state.typedWord;
-		const typedLetters = typed.slice(0, goal.length).split("");
-
-		return typedLetters.reduce((previousLetterGroups, letter, index) => {
-			let lastLetterGroup =
-				previousLetterGroups[previousLetterGroups.length - 1];
-			const isMatching = letter === goal[index];
-
-			if (!lastLetterGroup || lastLetterGroup.isMatching !== isMatching) {
-				lastLetterGroup = {
-					letters: ""
-				};
-				previousLetterGroups.push(lastLetterGroup);
-			}
-
-			lastLetterGroup.letters += goal[index];
-			lastLetterGroup.isMatching = isMatching;
-
-			return previousLetterGroups;
-		}, []);
 	};
 
 	toggleSpacesAfterWords = event => {
@@ -91,10 +65,7 @@ export default class WordType extends Component {
 				: this.state.goalWord.toLowerCase();
 		this.setState({
 			capitalizeWords: checked,
-			goalWord: newGoal,
-			letterGroups: checked
-				? this.state.letterGroups
-				: this.compareGoalToTyped(newGoal, this.state.typedWord)
+			goalWord: newGoal
 		});
 	};
 
@@ -105,7 +76,6 @@ export default class WordType extends Component {
 					htmlFor={this.props.id}
 					goalWord={this.state.goalWord}
 					typedWord={this.state.typedWord}
-					letterGroups={this.state.letterGroups}
 				/>
 
 				<WordInput
