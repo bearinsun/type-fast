@@ -1,25 +1,36 @@
 import React, { Component } from "react";
 import "./index.css";
-import WordLabel from "./WordLabel";
+import Word from "./Word";
 import WordInput from "./WordInput";
+import WordToggles from "./WordToggles";
+import WordToggle from "./WordToggles/WordToggle";
 
 export default class WordType extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			goalWord: this.props.words[
-				Math.floor(Math.random() * this.props.words.length)
-			],
+			spacesAfterWords: false,
+			capitalizeWords: false,
 			typedWord: ""
 		};
-		this.state.letterGroups = this.compareGoalToTyped();
 
-		this.updateTypedWord = this.updateTypedWord.bind(this);
-		this.changeWord = this.changeWord.bind(this);
-		this.compareGoalToTyped = this.compareGoalToTyped.bind(this);
+		this.state.goalWord = this.determineGoalWord();
+		this.state.letterGroups = this.compareGoalToTyped();
 	}
 
-	updateTypedWord(value) {
+	determineGoalWord = () => {
+		let goalWord = this.props.words[
+			Math.floor(Math.random() * this.props.words.length)
+		];
+
+		if (this.state.capitalizeWords && Math.random() < 0.5)
+			goalWord = goalWord[0].toUpperCase() + goalWord.slice(1);
+		if (this.state.spacesAfterWords) goalWord += " ";
+
+		return goalWord;
+	};
+
+	updateTypedWord = value => {
 		this.setState(
 			{
 				typedWord: value
@@ -29,18 +40,16 @@ export default class WordType extends Component {
 					letterGroups: this.compareGoalToTyped()
 				})
 		);
-	}
+	};
 
-	changeWord() {
+	changeGoalWord = () => {
 		this.setState({
-			goalWord: this.props.words[
-				Math.floor(Math.random() * this.props.words.length)
-			],
+			goalWord: this.determineGoalWord(),
 			typedWord: ""
 		});
-	}
+	};
 
-	compareGoalToTyped() {
+	compareGoalToTyped = () => {
 		const typedLetters = this.state.typedWord
 			.slice(0, this.state.goalWord.length)
 			.split("");
@@ -62,12 +71,27 @@ export default class WordType extends Component {
 
 			return previousLetterGroups;
 		}, []);
-	}
+	};
 
-	render() {
+	toggleSpacesAfterWords = event => {
+		this.setState(
+			{
+				spacesAfterWords: event.target.checked
+			},
+			() => this.setState({ goalWord: (this.state.goalWord += " ") })
+		);
+	};
+
+	toggleCapitalizeWords = event => {
+		this.setState({
+			capitalizeWords: event.target.checked
+		});
+	};
+
+	render = () => {
 		return (
-			<fieldset className="word-type">
-				<WordLabel
+			<fieldset>
+				<Word
 					htmlFor={this.props.id}
 					goalWord={this.state.goalWord}
 					typedWord={this.state.typedWord}
@@ -79,9 +103,24 @@ export default class WordType extends Component {
 					goalWord={this.state.goalWord}
 					typedWord={this.state.typedWord}
 					updateTypedWord={this.updateTypedWord}
-					changeWord={this.changeWord}
+					changeGoalWord={this.changeGoalWord}
 				/>
+
+				<WordToggles>
+					<WordToggle
+						id="spacesAfterWords"
+						checked={this.state.spacesAfterWords}
+						label="Spaces After Words"
+						onChange={this.toggleSpacesAfterWords}
+					/>
+					<WordToggle
+						id="capitalizeWords"
+						checked={this.state.capitalizeWords}
+						label="Capitalize Random Words"
+						onChange={this.toggleCapitalizeWords}
+					/>
+				</WordToggles>
 			</fieldset>
 		);
-	}
+	};
 }
