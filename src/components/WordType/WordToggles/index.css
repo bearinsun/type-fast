@@ -56,7 +56,7 @@
 
 	width: 0;
 	height: 0;
-	background-color: #333;
+	background-color: #222;
 }
 
 .word-type__checkbox:checked::before {
@@ -67,5 +67,5 @@
 }
 
 .word-type__label {
-	color: #555;
+	color: #333;
 }
