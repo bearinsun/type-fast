@@ -29,3 +29,9 @@ body {
 	font-size: calc(1em + 0.5vmin);
 	font-kerning: auto;
 }
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
