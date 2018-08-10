@@ -1,11 +1,12 @@
 import React from "react";
+import classNames from "classnames";
 import "./index.css";
 
 export default function WordToggles(props) {
 	return (
-		<ul class="word-type__toggles">
+		<ul className={classNames("word-type__toggles")}>
 			{props.children.map(element => (
-				<li class="word-type__toggle">{element}</li>
+				<li className={classNames("word-type__toggle")}>{element}</li>
 			))}
 		</ul>
 	);

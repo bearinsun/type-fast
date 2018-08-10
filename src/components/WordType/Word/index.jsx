@@ -1,4 +1,6 @@
 import React from "react";
+import classNames from "classnames";
+import "./index.css";
 
 export default function Word(props) {
 	return (
@@ -6,11 +8,11 @@ export default function Word(props) {
 			{props.typedWord
 				? [
 						props.letterGroups.map((letterGroup, index) => {
-							let className =
-								"word-type__letters word-type__letters--";
-							className += letterGroup.isMatching
-								? "correct"
-								: "incorrect";
+							const className = classNames("word-type__letters", {
+								"word-type__letters--correct":
+									letterGroup.isMatching,
+								"word-type__letters--incorrect": !letterGroup.isMatching
+							});
 
 							return (
 								<mark className={className} key={index}>

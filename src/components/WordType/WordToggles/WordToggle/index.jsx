@@ -1,15 +1,16 @@
 import React from "react";
+import classNames from "classnames";
 
 export default function WordToggle(props) {
 	return [
 		<input
 			id={props.id}
-			className="word-type__checkbox"
+			className={classNames("word-type__checkbox")}
 			checked={props.checked}
 			onChange={props.onChange}
 			type="checkbox"
 		/>,
-		<label className="word-type__label" htmlFor={props.id}>
+		<label className={classNames("word-type__label")} htmlFor={props.id}>
 			{props.label}
 		</label>
 	];

@@ -1,10 +1,12 @@
 import React from "react";
+import classNames from "classnames";
+import "./index.css";
 
 export default function WordInput(props) {
 	return (
 		<input
 			id={props.id}
-			className="word-type__input"
+			className={classNames("word-type__input")}
 			value={props.typedWord}
 			onPaste={event => event.preventDefault()}
 			onChange={event => {
