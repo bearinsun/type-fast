@@ -9,7 +9,7 @@ export default class WordType extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			spacesAfterWords: false,
+			spacesAfterWords: true,
 			capitalizeWords: false,
 			typedWord: ""
 		};
