@@ -16,6 +16,8 @@ export default class WordType extends Component {
 
 		this.state.goalWord = this.determineGoalWord();
 		this.state.letterGroups = this.compareGoalToTyped();
+
+		this.wordInput = React.createRef();
 	}
 
 	determineGoalWord = () => {
@@ -74,6 +76,7 @@ export default class WordType extends Component {
 	};
 
 	toggleSpacesAfterWords = event => {
+		this.wordInput.current.focus();
 		this.setState(
 			{
 				spacesAfterWords: event.target.checked
@@ -88,6 +91,7 @@ export default class WordType extends Component {
 	};
 
 	toggleCapitalizeWords = event => {
+		this.wordInput.current.focus();
 		this.setState({
 			capitalizeWords: event.target.checked
 		});
@@ -109,6 +113,7 @@ export default class WordType extends Component {
 					typedWord={this.state.typedWord}
 					updateTypedWord={this.updateTypedWord}
 					changeGoalWord={this.changeGoalWord}
+					ref={this.wordInput}
 				/>
 
 				<WordToggles>
