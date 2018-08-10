@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function WordLabel(props) {
+export default function Word(props) {
 	return (
-		<label className="word-type__label" htmlFor={props.htmlFor}>
+		<label className="word-type__word" htmlFor={props.htmlFor}>
 			{props.typedWord
 				? [
 						props.letterGroups.map((letterGroup, index) => {
