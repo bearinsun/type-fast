@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./index.css";
 import Word from "./Word";
 import WordInput from "./WordInput";
 import WordToggles from "./WordToggles";
