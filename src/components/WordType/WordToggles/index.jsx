@@ -1,15 +1,29 @@
 import React from "react";
-import classNames from "classnames";
-import "./index.css";
+import styled from "react-emotion";
+
+const StyledToggles = styled.ul`
+	display: table;
+
+	width: 0;
+	margin: 0;
+	margin-top: 1.25em;
+	border-top: 1px solid #eee;
+	padding: 0;
+
+	list-style-type: none;
+`;
+
+const StyledToggle = styled.li`
+	padding: 0.5em 0;
+	white-space: nowrap;
+`;
 
 export default function WordToggles(props) {
 	return (
-		<ul className={classNames("word-type__toggles")}>
+		<StyledToggles>
 			{props.children.map((element, index) => (
-				<li className={classNames("word-type__toggle")} key={index}>
-					{element}
-				</li>
+				<StyledToggle key={index}>{element}</StyledToggle>
 			))}
-		</ul>
+		</StyledToggles>
 	);
 }
