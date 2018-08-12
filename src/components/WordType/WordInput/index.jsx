@@ -1,11 +1,34 @@
 import React from "react";
-import classNames from "classnames";
-import "./index.css";
+import styled from "react-emotion";
+
+const StyledInput = styled.input`
+	transition: 0.15s all ease;
+
+	display: block;
+	width: 90vw;
+	margin: 0 auto;
+	border: none;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.02);
+	padding: 1.25em 1.25em;
+	background-color: white;
+
+	font-size: 1.5em;
+	color: #222;
+
+	&:hover,
+	&:focus {
+		transition: 0.15s all ease;
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
+	}
+
+	@media (min-width: 769px) {
+		width: 35vw;
+	}
+`;
 
 export default React.forwardRef((props, ref) => (
-	<input
+	<StyledInput
 		id={props.id}
-		className={classNames("word-type__input")}
 		value={props.typedWord}
 		onPaste={event => event.preventDefault()}
 		onChange={event => {
@@ -18,6 +41,6 @@ export default React.forwardRef((props, ref) => (
 			props.changeGoalWord();
 		}}
 		autoFocus
-		ref={ref}
+		innerRef={ref}
 	/>
 ));
