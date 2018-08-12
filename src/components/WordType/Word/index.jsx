@@ -1,6 +1,6 @@
 import React from "react";
-import classNames from "classnames";
-import "./index.css";
+import styled from "react-emotion";
+import withProps from "recompose/withProps";
 
 function compareWords(reference, comparison) {
 	const comparisonLetters = comparison.slice(0, reference.length).split("");
@@ -24,36 +24,48 @@ function compareWords(reference, comparison) {
 	}, []);
 }
 
+const WordLabel = withProps(props => ({
+	htmlFor: props.htmlFor,
+	title: props.title
+}))(styled.label`
+	display: block;
+	margin-bottom: 1em;
+
+	cursor: help;
+	user-select: none;
+
+	text-align: center;
+	font-size: 2.5em;
+	font-weight: 700;
+	color: #111;
+
+	@media (min-width: 769px) {
+		font-size: 3em;
+	}
+`);
+
+const ValidityMark = styled.mark`
+	background-color: ${props =>
+		props.isCorrect ? "rgba(46, 204, 113, 0.5)" : "rgba(231, 76, 60, 0.5)"};
+`;
+
 export default function Word(props) {
 	return (
-		<label
-			className="word-type__word"
-			htmlFor={props.htmlFor}
-			title="Type this word!"
-		>
+		<WordLabel htmlFor={props.htmlFor} title="Type this word!">
 			{props.typedWord
 				? [
 						compareWords(props.goalWord, props.typedWord).map(
-							(letterGroup, index) => {
-								const className = classNames(
-									"word-type__letters",
-									{
-										"word-type__letters--correct":
-											letterGroup.isMatching,
-										"word-type__letters--incorrect": !letterGroup.isMatching
-									}
-								);
-
-								return (
-									<mark className={className} key={index}>
-										{letterGroup.letters}
-									</mark>
-								);
-							}
+							(letterGroup, index) => (
+								<ValidityMark
+									isCorrect={letterGroup.isMatching}
+								>
+									{letterGroup.letters}
+								</ValidityMark>
+							)
 						),
 						props.goalWord.slice(props.typedWord.length)
 				  ]
 				: props.goalWord}
-		</label>
+		</WordLabel>
 	);
 }
