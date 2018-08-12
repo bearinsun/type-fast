@@ -54,6 +54,7 @@ export default function Word(props) {
 							(letterGroup, index) => (
 								<ValidityMark
 									isCorrect={letterGroup.isMatching}
+									key={index}
 								>
 									{letterGroup.letters}
 								</ValidityMark>
