@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "react-emotion";
 
-const StyledInput = styled.input`
+const StyledWordInput = styled.input`
 	transition: 0.15s all ease;
 
 	display: block;
@@ -27,7 +27,7 @@ const StyledInput = styled.input`
 `;
 
 export default React.forwardRef((props, ref) => (
-	<StyledInput
+	<StyledWordInput
 		id={props.id}
 		value={props.typedWord}
 		onPaste={event => event.preventDefault()}
