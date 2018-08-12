@@ -40,7 +40,7 @@ const StyledWord = styled.label`
 	}
 `;
 
-const ValidityMark = styled.mark`
+const StyledMark = styled.mark`
 	background-color: ${props =>
 		props.isCorrect ? "rgba(46, 204, 113, 0.5)" : "rgba(231, 76, 60, 0.5)"};
 `;
@@ -52,12 +52,12 @@ export default function Word(props) {
 				? [
 						compareWords(props.goalWord, props.typedWord).map(
 							(letterGroup, index) => (
-								<ValidityMark
+								<StyledMark
 									isCorrect={letterGroup.isMatching}
 									key={index}
 								>
 									{letterGroup.letters}
-								</ValidityMark>
+								</StyledMark>
 							)
 						),
 						props.goalWord.slice(props.typedWord.length)
