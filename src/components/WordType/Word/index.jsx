@@ -23,7 +23,7 @@ function compareWords(reference, comparison) {
 	}, []);
 }
 
-const WordLabel = styled.label`
+const StyledWord = styled.label`
 	display: block;
 	margin-bottom: 1em;
 
@@ -47,7 +47,7 @@ const ValidityMark = styled.mark`
 
 export default function Word(props) {
 	return (
-		<WordLabel htmlFor={props.htmlFor} title="Type this word!">
+		<StyledWord htmlFor={props.htmlFor} title="Type this word!">
 			{props.typedWord
 				? [
 						compareWords(props.goalWord, props.typedWord).map(
@@ -62,6 +62,6 @@ export default function Word(props) {
 						props.goalWord.slice(props.typedWord.length)
 				  ]
 				: props.goalWord}
-		</WordLabel>
+		</StyledWord>
 	);
 }
