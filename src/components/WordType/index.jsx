@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Word from "./Word";
 import WordInput from "./WordInput";
 import WordToggles from "./WordToggles";
 import WordToggle from "./WordToggles/WordToggle";
 
-export default class WordType extends Component {
+export default class WordType extends PureComponent {
 	constructor(props) {
 		super(props);
 		this.state = {
