@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "react-emotion";
-import withProps from "recompose/withProps";
 
 function compareWords(reference, comparison) {
 	const comparisonLetters = comparison.slice(0, reference.length).split("");
@@ -24,10 +23,7 @@ function compareWords(reference, comparison) {
 	}, []);
 }
 
-const WordLabel = withProps(props => ({
-	htmlFor: props.htmlFor,
-	title: props.title
-}))(styled.label`
+const WordLabel = styled.label`
 	display: block;
 	margin-bottom: 1em;
 
@@ -42,7 +38,7 @@ const WordLabel = withProps(props => ({
 	@media (min-width: 769px) {
 		font-size: 3em;
 	}
-`);
+`;
 
 const ValidityMark = styled.mark`
 	background-color: ${props =>
