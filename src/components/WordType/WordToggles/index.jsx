@@ -13,17 +13,6 @@ const StyledToggles = styled.ul`
 	list-style-type: none;
 `;
 
-const StyledToggle = styled.li`
-	padding: 0.5em 0;
-	white-space: nowrap;
-`;
-
 export default function WordToggles(props) {
-	return (
-		<StyledToggles>
-			{props.children.map((element, index) => (
-				<StyledToggle key={index}>{element}</StyledToggle>
-			))}
-		</StyledToggles>
-	);
+	return <StyledToggles>{props.children}</StyledToggles>;
 }

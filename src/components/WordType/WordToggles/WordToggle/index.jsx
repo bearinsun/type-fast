@@ -2,6 +2,11 @@ import React from "react";
 import withProps from "recompose/withProps";
 import styled from "react-emotion";
 
+const StyledWordToggle = styled.li`
+	padding: 0.5em 0;
+	white-space: nowrap;
+`;
+
 const StyledCheckbox = withProps({
 	type: "checkbox"
 })(styled.input`
@@ -58,7 +63,7 @@ const StyledCheckboxLabel = styled.label`
 
 export default function WordToggle(props) {
 	return (
-		<div>
+		<StyledWordToggle>
 			<StyledCheckbox
 				id={props.id}
 				checked={props.checked}
@@ -67,6 +72,6 @@ export default function WordToggle(props) {
 			<StyledCheckboxLabel htmlFor={props.id}>
 				{props.label}
 			</StyledCheckboxLabel>
-		</div>
+		</StyledWordToggle>
 	);
 }
