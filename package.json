@@ -1,6 +1,6 @@
 {
 	"name": "type-fast",
-	"version": "0.1.0",
+	"version": "1.0.1",
 	"description": " ⌨💨 Simple, minimal typing practice",
 	"private": true,
 	"dependencies": {

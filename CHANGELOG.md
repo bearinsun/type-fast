@@ -8,6 +8,14 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [1.0.1] - 2018-09-01
+
+### ⚙ Internal
+
+-   Remove unused dependencies
+-   Output `index.html` to `public` rather than the root `dist` folder.
+-   Update `package.json` version to reflect current project version.
+
 ## [1.0.0] - 2018-09-01
 
 ### 🚀 Features
@@ -22,5 +30,6 @@ and this project adheres to
 -   Automatically generate the web app manifeset, along with icons for every
     platform
 
-[unreleased]: https://github.com/bearinsun/type-fast/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/bearinsun/type-fast/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/bearinsun/type-fast/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/bearinsun/type-fast/compare/v0.1.0...v1.0.0
