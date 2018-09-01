@@ -13,7 +13,8 @@ module.exports = (_env, options) => {
 				filename: "static/css/bundle-[hash].css"
 			}),
 			new HtmlPlugin({
-				template: "public/index.html"
+				template: "public/index.html",
+				filename: "public/index.html"
 			}),
 			new ScriptExtHtmlPlugin({
 				defaultAttribute: "defer"
