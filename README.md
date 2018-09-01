@@ -4,7 +4,7 @@
 
 ## Changelog
 
-[Click here to read the `CHANGELOG.md`.](/CHANGELOG.md)
+[Click here to read `CHANGELOG.md`.](/CHANGELOG.md)
 
 ## Disclaimer
 
