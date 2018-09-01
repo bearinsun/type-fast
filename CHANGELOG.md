@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+### ⚙ Internal
+
+-   Remove `registerServiceWorker.js`
+
 ## [1.0.1] - 2018-09-01
 
 ### ⚙ Internal
