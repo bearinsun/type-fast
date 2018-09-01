@@ -11,6 +11,7 @@ and this project adheres to
 ### ⚙ Internal
 
 -   Remove `registerServiceWorker.js`
+-   Remove registerServiceWorker import from `index.js`
 
 ## [1.0.1] - 2018-09-01
 
