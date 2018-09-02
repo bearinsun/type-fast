@@ -12,6 +12,7 @@ and this project adheres to
 
 -   Remove `registerServiceWorker.js`
 -   Remove registerServiceWorker import from `index.js`
+-   Remove `registerServiceWorker` function call
 
 ## [1.0.1] - 2018-09-01
 
