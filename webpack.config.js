@@ -14,7 +14,7 @@ module.exports = (_env, options) => {
 			}),
 			new HtmlPlugin({
 				template: "public/index.html",
-				filename: "public/index.html"
+				filename: isProduction ? "public/index.html" : "index.html"
 			}),
 			new ScriptExtHtmlPlugin({
 				defaultAttribute: "defer"

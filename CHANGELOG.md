@@ -14,6 +14,10 @@ and this project adheres to
 -   Remove registerServiceWorker import from `index.js`
 -   Remove `registerServiceWorker` function call
 
+### 🐛 Bug Fixes
+
+-   Fix `webpack-dev-server` not serving HTML
+
 ## [1.0.1] - 2018-09-01
 
 ### ⚙ Internal
