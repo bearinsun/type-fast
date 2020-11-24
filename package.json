@@ -42,15 +42,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/u1f944/berenson.me.git"
+		"url": "git+https://github.com/slbls/type-fast.git"
 	},
 	"author": {
 		"name": "Spencer Berenson",
-		"email": "spencer@berenson.me",
-		"url": "https://berenson.me"
+		"email": "spencer@berenson.dev",
+		"url": "https://berenson.dev"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/u1f944/berenson.me/issues"
+		"url": "https://github.com/slbls/type-fast/issues"
 	}
 }
