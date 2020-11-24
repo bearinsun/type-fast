@@ -1,5 +1,4 @@
-const { DefinePlugin } = require("webpack"),
-	path = require("path"),
+const path = require("path"),
 	CleanPlugin = require("clean-webpack-plugin"),
 	HtmlPlugin = require("html-webpack-plugin"),
 	ScriptExtHtmlPlugin = require("script-ext-html-webpack-plugin"),
@@ -7,41 +6,7 @@ const { DefinePlugin } = require("webpack"),
 	WebappPlugin = require("webapp-webpack-plugin");
 
 module.exports = (_env, options) => {
-	const isProduction = options.mode.toLowerCase() === "production",
-		plugins = [
-			new MiniCssExtractPlugin({
-				filename: "static/css/bundle-[hash].css"
-			}),
-			new HtmlPlugin({
-				template: "public/index.html",
-				filename: isProduction ? "public/index.html" : "index.html"
-			}),
-			new ScriptExtHtmlPlugin({
-				defaultAttribute: "defer"
-			}),
-			new WebappPlugin({
-				logo: "./public/favicon.png",
-				prefix: "public/icons/",
-				inject: true,
-				favicons: {
-					background: "#f5f5f5",
-					theme_color: "#333333",
-					display: "fullscreen",
-					icons: {
-						android: true,
-						appleIcon: true,
-						appleStartup: false,
-						coast: false,
-						favicons: true,
-						firefox: true,
-						windows: true,
-						yandex: true
-					}
-				}
-			})
-		];
-
-	isProduction && plugins.push(new CleanPlugin("dist"));
+	const isProduction = options.mode.toLowerCase() === "production";
 
 	return {
 		devtool: isProduction ? "source-map" : "inline-source-map",
@@ -87,6 +52,38 @@ module.exports = (_env, options) => {
 				}
 			]
 		},
-		plugins: plugins
+		plugins: [
+			new MiniCssExtractPlugin({
+				filename: "static/css/bundle-[hash].css"
+			}),
+			new HtmlPlugin({
+				template: "public/index.html",
+				filename: "index.html"
+			}),
+			new ScriptExtHtmlPlugin({
+				defaultAttribute: "defer"
+			}),
+			new WebappPlugin({
+				logo: "./public/favicon.png",
+				prefix: "public/icons/",
+				inject: true,
+				favicons: {
+					background: "#f5f5f5",
+					theme_color: "#333333",
+					display: "fullscreen",
+					icons: {
+						android: true,
+						appleIcon: true,
+						appleStartup: false,
+						coast: false,
+						favicons: true,
+						firefox: true,
+						windows: true,
+						yandex: true
+					}
+				}
+			}),
+			...(isProduction ? [new CleanPlugin("dist")] : [])
+		]
 	};
 };
