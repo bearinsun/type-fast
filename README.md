@@ -8,6 +8,6 @@
 
 ## Disclaimer
 
-This is my first React project. If you have any suggestions for features,
-recommendations for code changes/best practices, or notice any bugs, please open
-an issue.
+This was my first React project and as such does not completely follow React
+best practices. Comments on features, changes, best practices, or bugs? Open an
+issue!
