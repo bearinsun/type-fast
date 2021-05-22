@@ -2,7 +2,7 @@
 
 ⌨💨 Simple, minimal typing practice
 
-**type-fast has been archived as it was only a practice, self-introduction to React.**
+⚠ **type-fast has been archived as it was only a practice, self-introduction to React.** ⚠ 
 
 ## Changelog
 
