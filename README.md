@@ -1,10 +1,10 @@
+**type-fast has been archived as it was only intended as a practice, self-introduction to React.**
+
+---
+
 # type-fast
 
 ⌨💨 Simple, minimal typing practice
-
-## Archive Notice
-
-**type-fast has been archived as it was only intended as a practice, self-introduction to React.**
 
 ## Changelog
 
